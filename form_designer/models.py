@@ -89,7 +89,7 @@ class Form(models.Model):
     config_json = models.TextField(_("config"), blank=True)
     config = JSONFieldDescriptor("config_json")
 
-    rule = models.OneToOneField('rating.Rule', on_delete=models.CASCADE, null=True, blank=True, editable=False)
+    rule = models.OneToOneField('rating.Rule', related_name="form_definition", on_delete=models.CASCADE, null=True, blank=True, editable=False)
 
     class Meta:
         verbose_name = _("form")
