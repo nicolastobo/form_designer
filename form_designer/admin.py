@@ -27,8 +27,8 @@ def jsonize(v):
 
 
 class FormAdminForm(forms.ModelForm):
-    # class Meta:
-    #     widgets = {"config_json": forms.Textarea(attrs={"rows": 3})}
+    class Meta:
+        widgets = {"config_json": forms.Textarea(attrs={"rows": 3})}
 
     def __init__(self, *args, **kwargs):
         super(FormAdminForm, self).__init__(*args, **kwargs)
