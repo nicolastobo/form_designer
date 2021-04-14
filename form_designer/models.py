@@ -86,8 +86,8 @@ class Form(models.Model):
 
     title = models.CharField(_("title"), max_length=100)
 
-    config_json = models.TextField(_("config"), blank=True)
-    config = JSONFieldDescriptor("config_json")
+    config_json = models.TextField(_("config"), blank=True, editable=False)
+    config = JSONFieldDescriptor("config_json"), editable=False)
 
     class Meta:
         verbose_name = _("form")
