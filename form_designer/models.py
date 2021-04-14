@@ -48,7 +48,7 @@ def validate_comma_separated_emails(value):
 
 
 class Form(models.Model):
-    CONFIG_OPTIONS = []
+    CONFIG_OPTIONS = [
         # (
         #     "save_fs",
         #     {
