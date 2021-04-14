@@ -49,39 +49,39 @@ def validate_comma_separated_emails(value):
 
 class Form(models.Model):
     CONFIG_OPTIONS = [
-        (
-            "save_fs",
-            {
-                "title": _("Save form submission"),
-                "description": _(
-                    "Save form submissions in the database"
-                    " so that they may be exported later."
-                ),
-                "process": create_form_submission,
-            },
-        ),
-        (
-            "email",
-            {
-                "title": _("Send email"),
-                "description": _(
-                    "Send the submitted form data to a list of email addresses."
-                ),
-                "form_fields": lambda form: [
-                    (
-                        "email",
-                        forms.CharField(
-                            label=capfirst(_("email address")),
-                            validators=[validate_comma_separated_emails],
-                            help_text=_(
-                                "Separate multiple email addresses with commas."
-                            ),
-                        ),
-                    )
-                ],
-                "process": send_as_mail,
-            },
-        ),
+        # (
+        #     "save_fs",
+        #     {
+        #         "title": _("Save form submission"),
+        #         "description": _(
+        #             "Save form submissions in the database"
+        #             " so that they may be exported later."
+        #         ),
+        #         "process": create_form_submission,
+        #     },
+        # ),
+        # (
+        #     "email",
+        #     {
+        #         "title": _("Send email"),
+        #         "description": _(
+        #             "Send the submitted form data to a list of email addresses."
+        #         ),
+        #         "form_fields": lambda form: [
+        #             (
+        #                 "email",
+        #                 forms.CharField(
+        #                     label=capfirst(_("email address")),
+        #                     validators=[validate_comma_separated_emails],
+        #                     help_text=_(
+        #                         "Separate multiple email addresses with commas."
+        #                     ),
+        #                 ),
+        #             )
+        #         ],
+        #         "process": send_as_mail,
+        #     },
+        # ),
     ]
 
     title = models.CharField(_("title"), max_length=100)
