@@ -199,19 +199,21 @@ class FormField(models.Model):
     choices = models.CharField(
         _("choices"), max_length=1024, blank=True, help_text=_("Comma-separated")
     )
-    help_text = models.CharField(
-        _("help text"),
-        max_length=1024,
-        blank=True,
-        help_text=_("Optional extra explanatory text beside the field"),
-    )
     default_value = models.CharField(
         _("default value"),
         max_length=255,
         blank=True,
         help_text=_("Optional default value of the field"),
     )
+
+    help_text = models.CharField(
+        _("help text"),
+        max_length=1024,
+        blank=True,
+        help_text=_("Optional extra explanatory text beside the field"),
+    )
     is_required = models.BooleanField(_("is required"), default=True)
+    display_on_certificate = models.BooleanField(_("display on certificate"), default=True)
 
     class Meta:
         ordering = ["ordering", "id"]
