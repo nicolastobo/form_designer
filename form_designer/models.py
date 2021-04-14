@@ -48,7 +48,7 @@ def validate_comma_separated_emails(value):
 
 
 class Form(models.Model):
-    CONFIG_OPTIONS = [
+    CONFIG_OPTIONS = []
         # (
         #     "save_fs",
         #     {
@@ -87,7 +87,7 @@ class Form(models.Model):
     title = models.CharField(_("title"), max_length=100)
 
     config_json = models.TextField(_("config"), blank=True, editable=False)
-    config = JSONFieldDescriptor("config_json", editable=False)
+    config = JSONFieldDescriptor("config_json")
 
     class Meta:
         verbose_name = _("form")
